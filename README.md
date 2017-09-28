@@ -1,5 +1,5 @@
-# kirbi-beer-lookup module
-A module for [Kirbi](https://github.com/richardson-media-house/kirbi), that adds a command to look up beer and brewery information.
+# doorman-beer-lookup module
+A module for [Doorman](https://github.com/FabricLabs/doorman), that adds a command to look up beer and brewery information.
 
 ## Usage
 

@@ -1,4 +1,4 @@
-module.exports = function (Kirbi) {
+module.exports = function (Doorman) {
 	return {
 		commands: [
 			'brew'
@@ -9,7 +9,7 @@ module.exports = function (Kirbi) {
 			description: 'Used to retrieve specific information about a brewery or brew.',
 			process: (msg, suffix, isEdit, cb) => {
 				const brewEmbed = { embed: {
-					color: Kirbi.Config.discord.defaultEmbedColor,
+					color: Doorman.Config.discord.defaultEmbedColor,
 					author: {
 						name: 'BreweryDB',
 						url: 'http://www.brewerydb.com/',
@@ -23,7 +23,7 @@ module.exports = function (Kirbi) {
 				} };
 
 				if (suffix) {
-					require('request')(`http://api.brewerydb.com/v2/search?q=${encodeURIComponent(suffix)}&key=${Kirbi.Auth.brewerydb_api_key}`, (err, res, body) => {
+					require('request')(`http://api.brewerydb.com/v2/search?q=${encodeURIComponent(suffix)}&key=${Doorman.Auth.brewerydb_api_key}`, (err, res, body) => {
 						if (err !== 'undefined' && err !== null) {
 							brewEmbed.embed.description = 'Service unavailable!';
 						} else if (typeof body !== 'undefined') {
